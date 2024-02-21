@@ -1,4 +1,4 @@
-package org.example.demoapi.service.imp;
+package org.example.demoapi.service;
 
 import org.example.demoapi.controller.dto.OperationDto;
 import org.example.demoapi.model.Wallet;

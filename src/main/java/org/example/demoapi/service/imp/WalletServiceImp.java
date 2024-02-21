@@ -1,9 +1,9 @@
-package org.example.demoapi.service;
+package org.example.demoapi.service.imp;
 
 import org.example.demoapi.exeption.WalletNotFoundException;
 import org.example.demoapi.model.Wallet;
 import org.example.demoapi.repository.WalletRepository;
-import org.example.demoapi.service.imp.WalletService;
+import org.example.demoapi.service.WalletService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
