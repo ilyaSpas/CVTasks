@@ -4,7 +4,7 @@ import jakarta.validation.Valid;
 import org.example.demoapi.controller.dto.OperationDto;
 import org.example.demoapi.exeption.WrongOperationException;
 import org.example.demoapi.model.Wallet;
-import org.example.demoapi.service.imp.WalletWalletOperationServiceImp;
+import org.example.demoapi.service.imp.WalletOperationServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +22,7 @@ import java.util.List;
 public class WalletOperationController {
 
     @Autowired
-    private WalletWalletOperationServiceImp walletOperationServiceImp;
+    private WalletOperationServiceImp walletOperationServiceImp;
 
     @PostMapping("/wallet")
     public ResponseEntity<Wallet> executeOperation(@RequestBody
