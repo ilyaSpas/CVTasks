@@ -17,7 +17,7 @@ public class WalletOperationServiceImp implements WalletOperationService {
 
     @Transactional
     @Override
-    public Wallet executeOperation(OperationDto operationDto) {
+    public synchronized Wallet executeOperation(OperationDto operationDto) {
         Wallet wallet = walletServiceImp.findByUUID(operationDto.getWalletId());
         switch (operationDto.getOperationType()) {
             case "DEPOSIT":
