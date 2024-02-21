@@ -1,4 +1,4 @@
-package org.example.demoapi.util;
+package org.example.demoapi.controller;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

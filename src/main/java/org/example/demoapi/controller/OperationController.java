@@ -1,10 +1,10 @@
 package org.example.demoapi.controller;
 
 import jakarta.validation.Valid;
-import org.example.demoapi.dto.OperationDto;
-import org.example.demoapi.entity.Wallet;
+import org.example.demoapi.controller.dto.OperationDto;
 import org.example.demoapi.exeption.WrongOperationException;
-import org.example.demoapi.service.OperationService;
+import org.example.demoapi.model.Wallet;
+import org.example.demoapi.service.OperationServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,12 +22,12 @@ import java.util.List;
 public class OperationController {
 
     @Autowired
-    private OperationService operationService;
+    private OperationServiceImp operationServiceImp;
 
     @PostMapping("/wallet")
     public ResponseEntity<Wallet> executeOperation(@RequestBody
                                                    @Valid
-                                                   OperationDto operationDto,
+                                                       OperationDto operationDto,
                                                    BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             StringBuilder sb = new StringBuilder();
@@ -40,6 +40,6 @@ public class OperationController {
             }
             throw new WrongOperationException(sb.toString());
         }
-        return new ResponseEntity<>(operationService.executeOperation(operationDto), HttpStatus.OK);
+        return new ResponseEntity<>(operationServiceImp.executeOperation(operationDto), HttpStatus.OK);
     }
 }

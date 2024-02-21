@@ -1,4 +1,4 @@
-package org.example.demoapi.dto;
+package org.example.demoapi.controller.dto;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
