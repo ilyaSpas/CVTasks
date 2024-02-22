@@ -28,7 +28,7 @@ public class WalletOperationController {
     @PostMapping("/wallet")
     public ResponseEntity<Wallet> executeOperation(@RequestBody
                                                    @Valid
-                                                       OperationDto operationDto,
+                                                   OperationDto operationDto,
                                                    BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             StringBuilder sb = new StringBuilder();

@@ -5,6 +5,7 @@ import org.example.demoapi.exeption.InsufficientFundsException;
 import org.example.demoapi.exeption.WrongTypeOperationException;
 import org.example.demoapi.model.Wallet;
 import org.example.demoapi.service.WalletOperationService;
+import org.example.demoapi.service.WalletService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,11 +14,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class WalletOperationServiceImp implements WalletOperationService {
 
     @Autowired
-    private WalletServiceImp walletServiceImp;
+    private WalletService walletServiceImp;
 
     @Transactional
     @Override
-    public synchronized Wallet executeOperation(OperationDto operationDto) {
+    public Wallet executeOperation(OperationDto operationDto) {
         Wallet wallet = walletServiceImp.findByUUID(operationDto.getWalletId());
         switch (operationDto.getOperationType()) {
             case "DEPOSIT":
